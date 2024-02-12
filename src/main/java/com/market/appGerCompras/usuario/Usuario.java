@@ -30,7 +30,7 @@ public class Usuario {
         this.nome = dadosUser.nome();
         this.email = dadosUser.email();
         this.senha = dadosUser.senha();
-        this.pontos = dadosUser.pontos();
+        this.pontos = 0 ;
         this.nivel = Nivel.retornarEnumPorPontos(dadosUser);
     }
 }
