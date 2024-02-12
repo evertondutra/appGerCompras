@@ -11,11 +11,13 @@ public record DadosCadastroProdutos(
         String nome,
         @NotBlank
         String marca,
+        @NotNull
         Tipo tipo,
         @NotNull
         int quantidadeItem,
         @NotNull
         int quantidadeMedida,
+        @NotNull
         Medida medida,
         int quantidadeKit,
         @NotNull

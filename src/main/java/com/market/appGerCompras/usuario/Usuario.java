@@ -20,11 +20,17 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private  int pontos;
+
+    @Enumerated(EnumType.STRING)
+    private Nivel nivel;
 
 
     public Usuario(DadosCadastroUsuario dadosUser) {
         this.nome = dadosUser.nome();
         this.email = dadosUser.email();
         this.senha = dadosUser.senha();
+        this.pontos = dadosUser.pontos();
+        this.nivel = Nivel.retornarEnumPorPontos(dadosUser);
     }
 }
