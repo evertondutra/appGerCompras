@@ -28,7 +28,7 @@ public class Produto {
     private BigDecimal precoCx;
     private String estabelecimento;
 
-    private BigDecimal total;
+//    private BigDecimal total;
 
     @Enumerated(EnumType.STRING)
     private Tipo tipo;
@@ -46,7 +46,7 @@ public class Produto {
         this.estabelecimento = dados.estabelecimento();
 
         // retorna o valor total deste produto
-        this.total = BigDecimal.valueOf(dados.quantidadeItem()).multiply(dados.precoUnidade());
+//        this.total = BigDecimal.valueOf(dados.quantidadeItem()).multiply(dados.precoUnidade());
 
 
         this.tipo = dados.tipo();

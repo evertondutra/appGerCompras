@@ -23,6 +23,8 @@ public record DadosCadastroProdutos(
         BigDecimal precoCx,
         @NotBlank
         String estabelecimento
+
+//        BigDecimal total
 ) {
 
 }
