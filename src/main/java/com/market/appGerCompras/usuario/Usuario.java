@@ -22,6 +22,7 @@ public class Usuario {
     private String senha;
     private  int pontos;
 
+
     @Enumerated(EnumType.STRING)
     private Nivel nivel;
 
