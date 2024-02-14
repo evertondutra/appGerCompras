@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")
@@ -29,6 +30,18 @@ public class UserController {
         // converte uma lista de usuários para uma lista de dadosListagemMusuarios
         return repository.findAll().stream().map(DadosListagemUsuario::new).toList();
     }
+
+    @GetMapping("/{nivel}")
+    public List<DadosListagemUsuario> listarUsuarioNivel(@PathVariable String nivel) {
+        // Converte uma lista de usuários para uma lista de dadosListagemMusuarios
+        return repository.findAll().stream()
+                .filter(usuario -> nivel.equalsIgnoreCase(usuario.getNivel().name())) // Comparação com o nome do Enum
+                .map(DadosListagemUsuario::new)
+                .collect(Collectors.toList());
+    }
+
+
+
 
 
 }
