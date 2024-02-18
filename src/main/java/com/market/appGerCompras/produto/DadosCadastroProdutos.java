@@ -28,5 +28,4 @@ public record DadosCadastroProdutos(
 
 //        BigDecimal total
 ) {
-
 }
