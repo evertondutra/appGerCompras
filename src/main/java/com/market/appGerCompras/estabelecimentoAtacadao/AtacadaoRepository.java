@@ -1,4 +1,4 @@
-package com.market.appGerCompras.estabelecimento;
+package com.market.appGerCompras.estabelecimentoAtacadao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

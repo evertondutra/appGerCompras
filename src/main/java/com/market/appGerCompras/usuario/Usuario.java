@@ -15,12 +15,13 @@ import lombok.NoArgsConstructor;
 public class Usuario {
 
     // entidade JPA
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
     private String senha;
-    private  int pontos;
+    private int pontos;
 
 
     @Enumerated(EnumType.STRING)

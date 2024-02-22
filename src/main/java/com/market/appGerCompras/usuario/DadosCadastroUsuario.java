@@ -17,6 +17,7 @@ public record DadosCadastroUsuario(
         @NotNull
         int pontos,
         @NotBlank @Size(min = 6, max = 15)
-        String senha) { }
+        String senha) {
+}
 
 

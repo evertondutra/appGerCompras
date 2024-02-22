@@ -8,9 +8,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -20,12 +17,12 @@ public class UserController {
 
     @PostMapping
     @Transactional   // para ter uma transação ativa com o BD
-    public void cadastrar(@RequestBody @Valid DadosCadastroUsuario dadosUser){
+    public void cadastrar(@RequestBody @Valid DadosCadastroUsuario dadosUser) {
         repository.save(new Usuario(dadosUser));
     }
 
     @GetMapping
-    public Page<DadosListagemUsuario> listar(Pageable paginacao){
+    public Page<DadosListagemUsuario> listar(Pageable paginacao) {
         // converte uma lista de usuários para uma lista de dadosListagemMusuarios
         return repository.findAll(paginacao).map(DadosListagemUsuario::new);
     }

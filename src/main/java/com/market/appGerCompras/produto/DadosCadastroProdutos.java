@@ -23,8 +23,8 @@ public record DadosCadastroProdutos(
         @NotNull
         BigDecimal precoUnidade,
         BigDecimal precoCx,
-        @NotBlank
-        String estabelecimento
+        @NotNull
+        Estabelecimento estabelecimento
 
 //        BigDecimal total
 ) {

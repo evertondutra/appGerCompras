@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AppGerComprasApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AppGerComprasApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AppGerComprasApplication.class, args);
+    }
 
 }

@@ -21,7 +21,7 @@ public interface Produto {
 
     BigDecimal getPrecoCx();
 
-    String getEstabelecimento();
+    Estabelecimento getEstabelecimento();
 
     Tipo getTipo();
 

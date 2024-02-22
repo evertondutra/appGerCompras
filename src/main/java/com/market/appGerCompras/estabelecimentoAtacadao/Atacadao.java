@@ -1,25 +1,24 @@
-package com.market.appGerCompras.estabelecimento;
+package com.market.appGerCompras.estabelecimentoAtacadao;
 
-import com.market.appGerCompras.produto.DadosCadastroProdutos;
-import com.market.appGerCompras.produto.Medida;
-import com.market.appGerCompras.produto.Produto;
-import com.market.appGerCompras.produto.Tipo;
+import com.market.appGerCompras.produto.*;
 import jakarta.persistence.*;
-import lombok.*;
-import org.springframework.data.jpa.repository.JpaRepository;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-
-@Table(name = "giga")
-@Entity(name = "Giga")
+@Table(name = "atacadao")
+@Entity(name = "Atacadao")
 @Getter
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @AllArgsConstructor
-public class Giga implements Produto {
+public class Atacadao implements Produto {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String marca;
@@ -28,7 +27,8 @@ public class Giga implements Produto {
     private int quantidadeKit;
     private BigDecimal precoUnidade;
     private BigDecimal precoCx;
-    private String estabelecimento;
+    @Enumerated(EnumType.STRING)
+    private Estabelecimento estabelecimento;
 
     @Enumerated(EnumType.STRING)
     private Tipo tipo;
@@ -36,7 +36,7 @@ public class Giga implements Produto {
     private Medida medida;
 
     // Construtor da classe Giga
-    public Giga(DadosCadastroProdutos dados) {
+    public Atacadao(DadosCadastroProdutos dados) {
         this.nome = dados.nome();
         this.marca = dados.marca();
         this.quantidadeItem = dados.quantidadeItem();

@@ -18,17 +18,17 @@ public enum Nivel {
             return Nivel.URANO;
         } else if (dadosUser.pontos() < 150) {
             return Nivel.SATURNO;
-        }else if (dadosUser.pontos() < 200) {
+        } else if (dadosUser.pontos() < 200) {
             return Nivel.JUPTER;
-        }else if (dadosUser.pontos() < 250) {
+        } else if (dadosUser.pontos() < 250) {
             return Nivel.MARTE;
-        }else if (dadosUser.pontos() < 300) {
+        } else if (dadosUser.pontos() < 300) {
             return Nivel.TERRA;
-        }else if (dadosUser.pontos() < 350) {
+        } else if (dadosUser.pontos() < 350) {
             return Nivel.VENUS;
-        }else if (dadosUser.pontos() < 400) {
+        } else if (dadosUser.pontos() < 400) {
             return Nivel.MERCURIO;
-        }else{
+        } else {
             return Nivel.SOL;
         }
     }
