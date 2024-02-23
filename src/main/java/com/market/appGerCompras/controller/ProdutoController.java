@@ -6,6 +6,9 @@ import com.market.appGerCompras.estabelecimentoGiga.DadosListagemProdutosGiga;
 import com.market.appGerCompras.estabelecimentoGiga.Giga;
 import com.market.appGerCompras.estabelecimentoGiga.GigaRepository;
 import com.market.appGerCompras.produto.DadosCadastroProdutos;
+import com.market.appGerCompras.produto.DadosListagemTodosProdutos;
+import com.market.appGerCompras.produto.ProdutoImpl;
+import com.market.appGerCompras.produto.TodosProdutosRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,6 +29,9 @@ public class ProdutoController {
     private GigaRepository repository;
     @Autowired
     private AtacadaoRepository atacadaoRepository;
+
+    @Autowired
+    private TodosProdutosRepository todosRepository;
 
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
@@ -57,10 +63,16 @@ public class ProdutoController {
 
     }
 
+//    @GetMapping("/todosprodutos")
+//    public Page<DadosListagemProdutosGiga> listar(Pageable paginacao) {
+//        // converte uma lista de usuários para uma lista de dadosListagemMusuarios
+//        return repository.findAll(paginacao).map(DadosListagemProdutosGiga::new);
+//    }
+
     @GetMapping
-    public Page<DadosListagemProdutosGiga> listar(Pageable paginacao) {
-        // converte uma lista de usuários para uma lista de dadosListagemMusuarios
-        return repository.findAll(paginacao).map(DadosListagemProdutosGiga::new);
+    public Page<Object[]> listar(Pageable paginacao) {
+        return todosRepository.listarProdutos(paginacao);
     }
+
 
 }
